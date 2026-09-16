@@ -27,8 +27,8 @@ module.exports = async function handler(req, res) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT),
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.SMTP_PORT || '587', 10),
       secure: false,
       auth: {
         user: process.env.SMTP_USER,

@@ -1,8 +1,9 @@
 {
+  "framework": null,
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/styles.css",
+      "source": "/style/styles.css",
       "headers": [
         {
           "key": "Content-Type",
@@ -24,7 +25,7 @@
       ]
     },
     {
-      "source": "/logo.webp",
+      "source": "/images/logo.webp",
       "headers": [
         {
           "key": "Content-Type",
@@ -37,10 +38,6 @@
     {
       "source": "/api/support",
       "destination": "/api/support.js"
-    },
-    {
-      "source": "/((?!api/|styles\\.css|app\\.js|logo\\.webp).*)",
-      "destination": "/index.html"
     }
   ]
 }
