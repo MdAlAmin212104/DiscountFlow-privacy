@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiscountFlow – Smart Discount & Automated Sales for Shopify</title>
+  <meta name="description"
+    content="Automate scheduled flash sales, BFCM campaigns, tiered discounts, and automatic price restoration on Shopify with DiscountFlow. Zero manual work, zero storefront lag.">
+  <meta name="keywords"
+    content="Shopify discount app, scheduled sale shopify, BFCM discount app, automatic price restoration, flash sale automation, tiered discounts shopify">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="DiscountFlow – Smart Discount & Automated Sales for Shopify">
+  <meta property="og:description"
+    content="Automate scheduled flash sales, BFCM campaigns, and progressive tiered price drops with safe automatic price restoration.">
+  <meta property="og:image" content="logo.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="logo.webp">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <img src="logo.webp" alt="DiscountFlow Logo">
+        <span>DiscountFlow</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#support" class="nav-link">Support & FAQ</a></li>
+        <li><a href="#privacy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="#terms" class="nav-link">Terms</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-primary">
+          <i class="fab fa-shopify"></i> Install App
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE VIEW 1: HOME / LANDING PAGE ==================== -->
+  <main id="view-home" class="page-view active-view">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span> Official Shopify App Store Ready
+          </div>
+          <h1 class="hero-title">
+            Automate Scheduled Sales & <span class="gradient-text">Flash Discounts</span> on Shopify
+          </h1>
+          <p class="hero-subtitle">
+            Schedule BFCM campaigns, progressive tiered price drops, and bulk collection discounts with
+            <strong>guaranteed automatic price restoration</strong>. Zero manual updates, zero storefront lag.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-primary btn-lg">
+              <i class="fab fa-shopify"></i> Install App on Shopify
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary">
+              <i class="fas fa-play-circle"></i> See How It Works
+            </a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item"><i class="fas fa-check-circle trust-icon"></i> 7-Day Free Trial</div>
+            <div class="trust-item"><i class="fas fa-shield-alt trust-icon"></i> Safe Snapshot Backup</div>
+            <div class="trust-item"><i class="fas fa-bolt trust-icon"></i> Serverless Queue Sync</div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Dashboard Mockup -->
+        <div class="mockup-wrapper">
+          <div class="dashboard-mockup">
+            <div class="mockup-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mockup-title-bar">
+                <i class="fas fa-lock"></i> discountflow.up.railway.app/dashboard
+              </div>
+              <span class="snapshot-pill"><i class="fas fa-sync-alt fa-spin"></i> Active Sync</span>
+            </div>
+
+            <div class="mockup-body">
+              <!-- Campaign Status Card -->
+              <div class="status-card">
+                <div class="status-info">
+                  <h4>🔥 Black Friday Flash Sale</h4>
+                  <p><i class="fas fa-layer-group"></i> 142 Product Variants Selected</p>
+                </div>
+                <div class="timer-badge" id="heroMockTimer">02h 45m 18s</div>
+              </div>
+
+              <!-- Product List Preview -->
+              <div class="product-list">
+                <div class="product-item">
+                  <div class="prod-details">
+                    <div class="prod-icon">DF</div>
+                    <div>
+                      <div class="prod-name">Premium Leather Jacket</div>
+                      <div class="prod-sub">Variant: Black / Medium</div>
+                    </div>
+                  </div>
+                  <div class="price-box">
+                    <span class="old-price">$249.00</span>
+                    <span class="new-price">$174.30 (-30%)</span>
+                    <div><span class="snapshot-pill">Original $249 Snapshotted</span></div>
+                  </div>
+                </div>
+
+                <div class="product-item">
+                  <div class="prod-details">
+                    <div class="prod-icon" style="background: linear-gradient(135deg, #3b82f6, #9333ea);">DF</div>
+                    <div>
+                      <div class="prod-name">Wireless Noise-Canceling ANC</div>
+                      <div class="prod-sub">Variant: Silver Edition</div>
+                    </div>
+                  </div>
+                  <div class="price-box">
+                    <span class="old-price">$199.00</span>
+                    <span class="new-price">$139.30 (-30%)</span>
+                    <div><span class="snapshot-pill">Original $199 Snapshotted</span></div>
+                  </div>
+                </div>
+
+                <div class="product-item">
+                  <div class="prod-details">
+                    <div class="prod-icon" style="background: linear-gradient(135deg, #10b981, #3b82f6);">DF</div>
+                    <div>
+                      <div class="prod-name">Minimalist Chronograph Watch</div>
+                      <div class="prod-sub">Variant: Rose Gold</div>
+                    </div>
+                  </div>
+                  <div class="price-box">
+                    <span class="old-price">$310.00</span>
+                    <span class="new-price">$217.00 (-30%)</span>
+                    <div><span class="snapshot-pill">Auto-Restores at 23:59 GMT</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Grid Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Powerful Automation</span>
+          <h2>Built for High-Growth Shopify Merchants</h2>
+          <p>Everything you need to launch high-converting sale campaigns without late-night manual price changes.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Scheduled Sale Campaigns</h3>
+            <p>Set exact start and end dates and times down to the minute. Launch weekend flash sales, Midnight deals,
+              or month-long BFCM campaigns effortlessly.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h3>Dynamic Price Adjustments</h3>
+            <p>Bulk discount specific products, entire collections, or storewide inventories by exact percentage (%) or
+              fixed dollar ($) amounts with granular rule filters.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Multi-Stage Tiered Sales</h3>
+            <p>Create urgency with progressive discount tiers (e.g., 20% off on Day 1, 30% off on Day 2, 40% off on
+              Final Day). Maximize revenue and clearance efficiency.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-undo-alt"></i>
+            </div>
+            <h3>Safe Automatic Price Restoration</h3>
+            <p>Original variant prices are safely snapshotted prior to discount execution. When the sale ends or if you
+              uninstall, prices are automatically restored to exact original values.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Zero Downtime & Background Queues</h3>
+            <p>Automated serverless background job workers process thousands of price updates via official Shopify Admin
+              APIs with zero storefront page load impact.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3>100% Shopify Store Safe</h3>
+            <p>Fully compliant with Shopify App Store standards. Zero customer PII tracking, OAuth 2.0 encrypted store
+              session security, and instant uninstall cleanup webhooks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">3-Step Onboarding</span>
+          <h2>Launch Your First Automated Sale in 2 Minutes</h2>
+          <p>DiscountFlow seamlessly integrates into your Shopify admin without complex theme liquid code editing.</p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Install & Select Target Products</h3>
+            <p>Connect DiscountFlow with 1-click via Shopify OAuth. Choose specific products, tag groups, or entire
+              collections for your sale campaign.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Schedule Dates & Discount Rates</h3>
+            <p>Pick start/end date-times and set your percentage or fixed discount rules. Set multi-stage escalation
+              rules if desired.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Autopilot Sale & Instant Restoration</h3>
+            <p>DiscountFlow automatically applies discounts at launch and safely restores your original prices the exact
+              second campaign ends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Profit & Time Calculator -->
+    <section class="calc-section">
+      <div class="container">
+        <div class="calc-card">
+          <div class="calc-inputs">
+            <h3>Calculate Your Time Saved & Sales Boost</h3>
+            <p>See how much manual labor DiscountFlow saves your e-commerce team every year.</p>
+
+            <div class="input-group">
+              <div class="input-label">
+                <span>Products on Sale</span>
+                <span id="calcProductsVal" style="color: var(--primary-light);">150</span>
+              </div>
+              <input type="range" id="calcProducts" class="range-slider" min="10" max="1000" value="150" step="10">
+            </div>
+
+            <div class="input-group">
+              <div class="input-label">
+                <span>Sale Campaigns per Year</span>
+                <span id="calcSalesVal" style="color: var(--primary-light);">12</span>
+              </div>
+              <input type="range" id="calcSales" class="range-slider" min="1" max="52" value="12" step="1">
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="result-box">
+              <div class="result-val" id="resHoursSaved">90 hrs</div>
+              <div class="result-lbl">Manual Labor Hours Saved / Year</div>
+            </div>
+
+            <div class="result-box" style="margin-bottom: 0;">
+              <div class="result-val" id="resRevenueGain">$75,600</div>
+              <div class="result-lbl">Estimated BFCM & Flash Sales Revenue Boost</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Simple & Transparent Billing</span>
+          <h2>Plans Designed for Every Stage</h2>
+          <p>Billed directly through your Shopify invoice via Shopify Application Charges. Cancel anytime in 1-click.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- 1. Free Plan -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Free Plan</h3>
+              <p class="pricing-desc">Perfect for merchants getting started with scheduled discounts.</p>
+            </div>
+
+            <div class="price-tag">
+              <span class="amount">Free</span>
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-layer-group check-icon"></i> <strong>100</strong> Product Variants</li>
+              <li><i class="fas fa-bullhorn check-icon"></i> <strong>3</strong> Active Campaigns</li>
+              <li><i class="fas fa-chart-line check-icon"></i> <strong>2</strong> Multi-Stage Campaigns</li>
+              <li><i class="fas fa-filter check-icon"></i> Products & Collections</li>
+              <li><i class="fas fa-clock check-icon"></i> Auto Start & Expiration</li>
+            </ul>
+
+            <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-secondary">
+              Install Free Plan
+            </a>
+          </div>
+
+          <!-- 2. Basic Plan -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Basic Plan</h3>
+              <p class="pricing-desc">Ideal for growing stores with multiple promotions.</p>
+            </div>
+
+            <div class="price-tag">
+              <span class="amount">$8.99</span>
+              <span class="period">/ mo</span>
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-layer-group check-icon"></i> <strong>500</strong> Product Variants</li>
+              <li><i class="fas fa-bullhorn check-icon"></i> <strong>10</strong> Active Campaigns</li>
+              <li><i class="fas fa-chart-line check-icon"></i> <strong>5</strong> Multi-Stage Campaigns</li>
+              <li><i class="fas fa-filter check-icon"></i> Products, Collections & Tags</li>
+              <li><i class="fas fa-clock check-icon"></i> Auto Start & Expiration</li>
+            </ul>
+
+            <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-secondary">
+              Start Basic Plan
+            </a>
+          </div>
+
+          <!-- 3. Standard Plan -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Standard Plan</h3>
+              <p class="pricing-desc">Designed for expanding businesses running frequent sales.</p>
+            </div>
+
+            <div class="price-tag">
+              <span class="amount">$12.99</span>
+              <span class="period">/ mo</span>
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-layer-group check-icon"></i> <strong>1,200</strong> Product Variants</li>
+              <li><i class="fas fa-bullhorn check-icon"></i> <strong>20</strong> Active Campaigns</li>
+              <li><i class="fas fa-chart-line check-icon"></i> <strong>8</strong> Multi-Stage Campaigns</li>
+              <li><i class="fas fa-filter check-icon"></i> Products, Collections & Tags</li>
+              <li><i class="fas fa-clock check-icon"></i> Auto Start & Expiration</li>
+            </ul>
+
+            <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-secondary">
+              Start Standard Plan
+            </a>
+          </div>
+
+          <!-- 4. Unlimited Plan (Featured) -->
+          <div class="pricing-card featured">
+            <span class="pricing-badge">🔥 Most Popular</span>
+
+            <div class="pricing-header">
+              <h3>Unlimited Plan</h3>
+              <p class="pricing-desc">Everything you need for unlimited discount automation.</p>
+            </div>
+
+            <div class="price-tag">
+              <span class="amount">$19.99</span>
+              <span class="period">/ mo</span>
+            </div>
+
+            <div class="trial-callout">
+              <i class="fas fa-crown"></i> Complete Unlimited Access
+            </div>
+
+            <ul class="features-list">
+              <li><i class="fas fa-layer-group check-icon"></i> <strong>Unlimited</strong> Variants</li>
+              <li><i class="fas fa-bullhorn check-icon"></i> <strong>Unlimited</strong> Campaigns</li>
+              <li><i class="fas fa-chart-line check-icon"></i> <strong>Unlimited</strong> Multi-Stage</li>
+              <li><i class="fas fa-filter check-icon"></i> Vendors, Types & Tags</li>
+              <li><i class="fas fa-headset check-icon"></i> <strong>Priority 24/7 Support</strong></li>
+            </ul>
+
+            <a href="https://discountflow.up.railway.app" target="_blank" class="btn btn-primary">
+              <i class="fab fa-shopify"></i> Get Unlimited Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Loved by Merchants</span>
+          <h2>Trusted for High-Stakes Sales</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="quote-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="quote-text">
+              "During Black Friday, we had over 600 SKUs on sale. DiscountFlow started the sale right at midnight and
+              restored all prices perfectly on Cyber Monday. Zero pricing errors!"
+            </p>
+            <div class="author-info">
+              <div class="author-avatar">MB</div>
+              <div class="author-details">
+                <h4>Marcus Vance</h4>
+                <p>Founder, Modern Apparel Co.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="quote-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="quote-text">
+              "The multi-stage tiered discounts allowed us to do 20% off Day 1 and 30% off Day 2 automatically. Revenue
+              jumped 45% compared to last year's sale!"
+            </p>
+            <div class="author-info">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #3b82f6);">SL</div>
+              <div class="author-details">
+                <h4>Sophia Liu</h4>
+                <p>E-commerce Director, LuxeGlow</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="quote-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="quote-text">
+              "Knowing original variant prices are snapshotted safely gives us peace of mind. We uninstalled once during
+              testing and it restored all prices automatically via webhooks!"
+            </p>
+            <div class="author-info">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #a855f7, #6366f1);">DK</div>
+              <div class="author-details">
+                <h4>David K.</h4>
+                <p>Store Owner, Urban Gear</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== PAGE VIEW 2: PRIVACY POLICY ==================== -->
+  <main id="view-privacy" class="page-view">
+    <div class="container compliance-container">
+      <div class="compliance-header">
+        <h1>Privacy Policy</h1>
+        <div class="meta-date">
+          <i class="fas fa-calendar-check"></i> Effective Date: September 16, 2026
+        </div>
+      </div>
+
+      <div class="doc-content">
+        <div class="compliance-box">
+          <h4><i class="fas fa-shield-alt" style="color: var(--accent-emerald);"></i> Shopify App Store Privacy
+            Compliance Guaranteed</h4>
+          <p>This Privacy Policy describes how <strong>DiscountFlow – Smart Discount</strong> ("we", "us", or "our")
+            collects, uses, and safeguards merchant and store data when you install or use our Shopify Application.</p>
+        </div>
+
+        <h2>1. Overview & Data Philosophy</h2>
+        <p>DiscountFlow is designed specifically for automated sale campaign scheduling and price restoration. We adhere
+          strictly to a <strong>privacy-first approach</strong>, collecting only the minimal operational data required
+          to execute sale discounts and preserve price history for your store variants.</p>
+
+        <h2>2. Data Collected from Shopify Merchants</h2>
+        <p>When you install and authorize DiscountFlow via Shopify OAuth, we collect and store the following specific
+          categories of data:</p>
+
+        <h3>A. Shop Information</h3>
+        <ul>
+          <li><strong>Shop Domain & Shop ID</strong>: Unique Shopify store identifier (e.g.,
+            <code>your-store.myshopify.com</code>).</li>
+          <li><strong>Shop Owner Email</strong>: Used exclusively for critical app notifications, billing receipts, and
+            support communications.</li>
+          <li><strong>Primary Currency & Timezone</strong>: Required to schedule sales according to your local business
+            hours and store currency formatting.</li>
+        </ul>
+
+        <h3>B. Product & Inventory Data</h3>
+        <ul>
+          <li><strong>Product IDs & Variant IDs</strong>: Identifiers of products included in your scheduled discount
+            campaigns.</li>
+          <li><strong>Original Variant Prices</strong>: Exact numerical price and compare-at-price values prior to
+            campaign execution (used for safe price snapshots).</li>
+          <li><strong>Campaign Configurations</strong>: Start times, end times, discount percentages, fixed amounts, and
+            rule filters.</li>
+        </ul>
+
+        <div class="compliance-box warning">
+          <h4><i class="fas fa-user-slash" style="color: var(--accent-amber);"></i> 3. End-Customer Data Collection
+            Declaration</h4>
+          <p><strong>DiscountFlow does NOT collect, store, track, or process personal identifiable information (PII) of
+              your store's end-customers.</strong></p>
+          <p>Our app operates entirely on backend product variant prices and inventory metadata. Customer names, email
+            addresses, shipping addresses, payment details, and checkout histories are never accessed or retained by
+            DiscountFlow.</p>
+        </div>
+
+        <h2>4. Data Retention & Shopify Mandatory Webhooks Compliance</h2>
+        <p>We retain merchant shop data and price snapshot records <strong>only for as long as the application remains
+            installed on your Shopify store</strong>.</p>
+        <p>DiscountFlow fully supports and strictly adheres to Shopify's Mandatory GDPR / CCPA Compliance Webhooks:</p>
+
+        <ul>
+          <li><code>customers/data_request</code>: Since DiscountFlow stores zero end-customer PII, any customer data
+            request returns an automated zero-record verification payload.</li>
+          <li><code>customers/redact</code>: Confirms that zero customer PII exists within our cloud database structure.
+          </li>
+          <li><code>shop/redact</code>: <strong>Mandatory Store Erasure</strong>. Upon receiving a
+            <code>shop/redact</code> webhook from Shopify (or automatically 48 hours following app uninstallation), our
+            system permanently purges all database records, campaign histories, price snapshots, access tokens, and
+            session keys associated with your store.</li>
+        </ul>
+
+        <h2>5. Data Security & Storage</h2>
+        <p>All data transmitted between Shopify, your store, and DiscountFlow is encrypted in transit using
+          industry-standard <strong>Transport Layer Security (TLS 1.3 / HTTPS)</strong>. Database snapshots and
+          authentication credentials are encrypted at rest using AES-256 encryption hosted within secure cloud
+          infrastructure with strict access controls.</p>
+
+        <h2>6. Contact Information</h2>
+        <p>If you have any questions or privacy requests regarding this Privacy Policy, please contact our privacy
+          compliance team at:</p>
+        <div class="email-links" style="max-width: 400px;">
+          <a href="mailto:alaminislam212104@gmail.com" class="email-item">
+            <i class="fas fa-envelope" style="color: var(--primary-light);"></i> alaminislam212104@gmail.com
+          </a>
+          <a href="https://discountflow.up.railway.app" target="_blank" class="email-item">
+            <i class="fas fa-globe" style="color: var(--accent-blue);"></i> https://discountflow.up.railway.app
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ==================== PAGE VIEW 3: TERMS OF SERVICE ==================== -->
+  <main id="view-terms" class="page-view">
+    <div class="container compliance-container">
+      <div class="compliance-header">
+        <h1>Terms of Service</h1>
+        <div class="meta-date">
+          <i class="fas fa-file-contract"></i> Effective Date: September 16, 2026
+        </div>
+      </div>
+
+      <div class="doc-content">
+        <p>Please read these Terms of Service ("Terms") carefully before installing or using the <strong>DiscountFlow –
+            Smart Discount</strong> Shopify application operated by DiscountFlow ("we", "us", or "our").</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By installing DiscountFlow on your Shopify store, you agree to be bound by these Terms and our Privacy
+          Policy. If you do not agree to these Terms, you must uninstall the application immediately.</p>
+
+        <h2>2. Account Integration via Shopify OAuth</h2>
+        <p>DiscountFlow connects to your store using official Shopify OAuth authorization. You are responsible for
+          maintaining the security of your Shopify store admin credentials. DiscountFlow shall not be liable for
+          unauthorized access resulting from compromised merchant admin accounts.</p>
+
+        <h2>3. Billing & Subscription Charges</h2>
+        <ul>
+          <li>All subscription charges for DiscountFlow (including Free and Pro plans) are processed directly through
+            <strong>Shopify Recurring Application Charges</strong>.</li>
+          <li>The Pro Plan includes a <strong>7-Day Free Trial</strong>. If you uninstall the app before the 7-day trial
+            period expires, your Shopify account will not be charged for the subscription.</li>
+          <li>All subscription fees are non-refundable except as mandated by Shopify App Store policies or applicable
+            law.</li>
+        </ul>
+
+        <h2>4. Acceptable Use & Store Responsibilities</h2>
+        <p>You agree not to use DiscountFlow for any illegal, fraudulent, or deceptive sales practices. You are solely
+          responsible for ensuring that your scheduled discount rates, promotional terms, and store prices comply with
+          consumer protection laws in your operating jurisdiction.</p>
+
+        <h2>5. Automated Price Restoration & Backup Commitments</h2>
+        <p>DiscountFlow employs serverless background job queues to capture variant price snapshots before executing
+          discounts and automatically restores original prices when campaigns terminate. While we maintain a 99.9% queue
+          uptime commitment, merchants are advised to review scheduled campaigns prior to peak traffic events.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>To the maximum extent permitted under applicable law, DiscountFlow shall not be liable for any indirect,
+          incidental, special, consequential, or punitive damages, or loss of profits or revenues, arising out of your
+          use of or inability to use the service.</p>
+
+        <h2>7. Governing Law & Contact</h2>
+        <p>These Terms shall be governed by and construed in accordance with standard international commercial
+          practices. For legal inquiries, contact <a
+            href="mailto:alaminislam212104@gmail.com">alaminislam212104@gmail.com</a>.</p>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ==================== PAGE VIEW 4: SUPPORT & FAQ PAGE ==================== -->
+  <main id="view-support" class="page-view">
+    <div class="container compliance-container" style="max-width: 1100px;">
+      <div class="compliance-header" style="text-align: center;">
+        <span class="section-tag">Merchant Assistance</span>
+        <h1>Support & FAQ Center</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0 auto;">
+          Have questions or need help setting up your automated flash sale? Our dedicated Shopify support team is here
+          to help.
+        </p>
+      </div>
+
+      <div class="support-grid">
+        <!-- Direct Contact Card -->
+        <div class="contact-card">
+          <div>
+            <h3>Get in Touch</h3>
+            <div class="response-badge">
+              <i class="fas fa-bolt"></i> Average Response Time: &lt; 24 Hours
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              Reach out directly to our engineering and support leads for setup assistance, custom sale rule inquiries,
+              or feedback.
+            </p>
+
+            <div class="email-links">
+              <a href="mailto:alaminislam212104@gmail.com" class="email-item">
+                <i class="fas fa-envelope-open-text" style="color: var(--primary-light);"></i>
+                alaminislam212104@gmail.com
+              </a>
+              <a href="https://wa.me/8801707691162" target="_blank" class="email-item">
+                <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                WhatsApp: +880 1707-691162
+              </a>
+            </div>
+          </div>
+
+          <div
+            style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1.5rem;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 0.4rem; color: #fff;"><i class="fas fa-clock"
+                style="color: var(--accent-blue);"></i> Operating Hours</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Mon – Sun: 24/7 Monitoring & Emergency Sale Ticket
+              Response.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Send Support Ticket</h3>
+
+          <form id="supportContactForm">
+            <div class="form-group">
+              <label for="contactName">Your Name / Store Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="e.g. John (MyStore.com)" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Shopify Store Email</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="name@yourstore.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">How can we help?</label>
+              <textarea id="contactMessage" class="form-control"
+                placeholder="Describe your question or campaign setup..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Submit Support Request
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-top: 4rem;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-tag">Frequently Asked Questions</span>
+          <h2>Everything You Need to Know</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Mandatory FAQ 1 -->
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Q: What happens when a campaign ends?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>A:</strong> DiscountFlow automatically restores original variant prices captured before the
+                sale started. Our system takes a precise cryptographic snapshot of your store's variant prices prior to
+                applying discounts, ensuring 100% price accuracy when restoring.</p>
+            </div>
+          </div>
+
+          <!-- Mandatory FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q: What happens if I uninstall the app during an active campaign?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>A:</strong> Our uninstall webhooks automatically trigger price restoration to protect your
+                store prices. Upon receiving Shopify's <code>app/uninstalled</code> notification, our emergency
+                background queue instantly reverts all discounted variant prices back to their snapshotted original
+                pre-sale prices.</p>
+            </div>
+          </div>
+
+          <!-- Mandatory FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q: Does DiscountFlow slow down my store?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>A:</strong> No, price updates are executed server-side via Shopify APIs, ensuring zero impact
+                on your storefront page load speeds. DiscountFlow does not inject heavy storefront scripts or liquid
+                code that slows down theme rendering.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q: Can I run multi-stage progressive price drops (e.g. 20% on Day 1, 30% on Day 2)?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>A:</strong> Yes! On the Pro Plan, you can configure Multi-Stage Tiered Sales. You can define
+                sequential time triggers and discount percentages. DiscountFlow handles transitioning between tiers
+                automatically.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q: How does the 7-Day Free Trial work?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>A:</strong> When you select the Pro Plan ($14.99/mo), Shopify provides a full 7-Day Free Trial.
+                You get unlimited access to all Pro features. If you cancel or uninstall within 7 days, your store will
+                not be charged a single cent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <img src="logo.webp" alt="DiscountFlow Logo">
+            <span>DiscountFlow</span>
+          </a>
+          <p>
+            The automated flash sale and scheduled discount app for Shopify merchants. Guaranteed safe price snapshots
+            and instant price restoration.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal & Privacy</h4>
+          <ul class="footer-links">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#support">Support Center</a></li>
+            <li><a href="https://discountflow.up.railway.app" target="_blank">Live App Server</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Support</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:alaminislam212104@gmail.com"><i class="fas fa-envelope"></i>
+                alaminislam212104@gmail.com</a></li>
+            <li><a href="https://wa.me/8801707691162" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                WhatsApp: +880 1707-691162</a></li>
+            <li style="margin-top: 0.5rem;">
+              <span class="shopify-safe-badge"><i class="fab fa-shopify"></i> Official Shopify App</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 DiscountFlow – Smart Discount. All rights reserved. Built for Shopify Merchants.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#privacy">Shopify Privacy Compliance</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
