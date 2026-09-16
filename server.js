@@ -5,11 +5,24 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+
+// Explicit static middleware for local & express execution
+app.use(express.static(path.join(__dirname), {
+  index: false,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css; charset=utf-8');
+    } else if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+    } else if (filePath.endsWith('.webp')) {
+      res.setHeader('Content-Type', 'image/webp');
+    }
+  }
+}));
 
 // Nodemailer Transporter Setup using .env credentials
 const transporter = nodemailer.createTransport({
@@ -22,15 +35,6 @@ const transporter = nodemailer.createTransport({
   },
   tls: {
     rejectUnauthorized: false
-  }
-});
-
-// Verify SMTP connection on server startup
-transporter.verify((error, success) => {
-  if (error) {
-    console.error('❌ SMTP Connection Error:', error.message);
-  } else {
-    console.log('✅ SMTP Mail Server is ready to send support emails to ' + (process.env.RECEIVER_EMAIL || process.env.SMTP_USER));
   }
 });
 
@@ -48,7 +52,7 @@ app.post('/api/support', async (req, res) => {
 
     // 1. Email Notification to Store Admin / Owner
     const mailOptionsAdmin = {
-      from: `"DiscountFlow Support Portal" <${process.env.SMTP_USER}>`,
+      from: `"DiscountFlow Support Portal" <${process.env.SMTP_USER || 'mdalamin212104@gmail.com'}>`,
       to: recipient,
       replyTo: email,
       subject: `🚨 [DiscountFlow Ticket] New Support Request from ${name}`,
@@ -101,11 +105,19 @@ app.post('/api/support', async (req, res) => {
   }
 });
 
-// Fallback to index.html for SPA routing
+// Guard against returning HTML when static assets are requested
 app.get('*', (req, res) => {
+  if (req.path.endsWith('.css') || req.path.endsWith('.js') || req.path.endsWith('.webp') || req.path.endsWith('.png')) {
+    return res.status(404).send('Asset not found');
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 DiscountFlow Web Server & Email API running on http://localhost:${PORT}`);
-});
+// Export app for Vercel serverless environment
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 DiscountFlow Web Server & Email API running on http://localhost:${PORT}`);
+  });
+}
